@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Job ID Joiner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+            color: white;
+        }
+        .container {
+            background: #2c2c2c;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input, button {
+            width: 50%;
+            margin: 10px 0;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #444;
+        }
+        input {
+            background-color: #333;
+            color: white;
+        }
+        input::placeholder {
+            color: #bbb;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:active {
+            background-color: #004085;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Destinys Job ID joiner</h2>
+        <input type="text" id="gameId" placeholder="Enter Game ID">
+        <input type="text" id="jobId" placeholder="Enter Job ID">
+        <button onclick="joinGame()">Join Game</button>
+    </div>
+
+    <script>
+        function joinGame() {
+            const gameId = document.getElementById("gameId").value;
+            const jobId = document.getElementById("jobId").value;
+            
+            if (gameId.trim() === "" || jobId.trim() === "") {
+                alert("Please enter both Game ID and Job ID.");
+                return;
+            }
+            
+            const url = `https://www.roblox.com/games/start?placeId=138862475868732&launchData=${gameId}]/${jobId}`;
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+</html>
